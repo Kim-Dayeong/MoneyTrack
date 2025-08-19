@@ -1,0 +1,14 @@
+# 빌드 산출물
+bin/
+obj/
+
+# 사용자 설정
+*.user
+*.vspscc
+*.suo
+*.userosscache
+*.sln.docstates
+
+# 앱 설정 (민감정보)
+appsettings.json
+appsettings.*.json
