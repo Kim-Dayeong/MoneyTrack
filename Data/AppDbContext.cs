@@ -26,4 +26,5 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
         c.HasIndex(x => x.ParentCategoryId);
         c.HasIndex(x => x.Kind);
     }
+public DbSet<Transaction> Transactions => Set<Transaction>();
 }
