@@ -1,16 +1,24 @@
 using Microsoft.EntityFrameworkCore;
 using MoneyTrack.Data;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // 1) DbContext 등록 (appsettings.json의 ConnectionStrings:Default 사용)
 var cs = builder.Configuration.GetConnectionString("Default");
 builder.Services.AddDbContext<AppDbContext>(opt =>
-    opt.UseMySql(cs!, ServerVersion.AutoDetect(cs))
-       .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)); // 조회 위주면 편함
+    opt.UseMySql(cs!, ServerVersion.AutoDetect(cs)));
+      // .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)); // 조회 위주면 편함
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services
+    .AddControllersWithViews()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+        // 필요하다면 ↓ (대소문자 구분 안 하고 싶을 때)
+        // options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+    });
 
 var app = builder.Build();
 
@@ -35,7 +43,7 @@ app.MapGet("/health/db", async (AppDbContext db) =>
     var ok = await db.Database.CanConnectAsync();
     return Results.Json(new { ok });
 });
-
+app.MapControllers();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

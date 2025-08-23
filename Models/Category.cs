@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+
 namespace MoneyTrack.Models;
 
 // DB ENUM('INCOME','EXPENSE')를 C# enum으로 사용

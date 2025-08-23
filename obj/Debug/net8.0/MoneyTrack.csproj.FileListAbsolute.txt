@@ -1,5 +1,3 @@
-/Users/kimdayeong/VScode/MoneyTrack/MoneyTrack/bin/Debug/net8.0/appsettings.Development.json
-/Users/kimdayeong/VScode/MoneyTrack/MoneyTrack/bin/Debug/net8.0/appsettings.json
 /Users/kimdayeong/VScode/MoneyTrack/MoneyTrack/bin/Debug/net8.0/MoneyTrack.staticwebassets.runtime.json
 /Users/kimdayeong/VScode/MoneyTrack/MoneyTrack/bin/Debug/net8.0/MoneyTrack
 /Users/kimdayeong/VScode/MoneyTrack/MoneyTrack/bin/Debug/net8.0/MoneyTrack.deps.json
@@ -133,3 +131,4 @@
 /Users/kimdayeong/VScode/MoneyTrack/MoneyTrack/obj/Debug/net8.0/MoneyTrack.csproj.AssemblyReference.cache
 /Users/kimdayeong/VScode/MoneyTrack/MoneyTrack/obj/Debug/net8.0/MoneyTrack.sourcelink.json
 /Users/kimdayeong/VScode/MoneyTrack/MoneyTrack/obj/Debug/net8.0/MoneyTrack.csproj.Up2Date
+/Users/kimdayeong/VScode/MoneyTrack/MoneyTrack/bin/Debug/net8.0/appsettings.json
