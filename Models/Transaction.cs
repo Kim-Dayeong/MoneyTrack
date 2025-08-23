@@ -1,5 +1,7 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using MoneyTrack.Models;
 
+[Table("Transactions")]
 public class Transaction
 {
     public uint TransactionId { get; set; }
@@ -10,5 +12,5 @@ public class Transaction
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
 
-    public Category Category { get; set; } = null!;
+    public Category Category { get; set; } = null!; //네비게이션 
 }
